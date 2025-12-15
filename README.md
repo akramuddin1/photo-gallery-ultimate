@@ -1,9 +1,10 @@
-# PhotoGallery — Private Desktop Photo Manager (Windows)
+# PhotoGallery — Private Local Photo Manager
 
-PhotoGallery is a **modern, privacy-first photo management application** built with **Python (Flask) and SQLite**, packaged as a **Windows desktop application**.  
-It provides a Google Photos–like experience **entirely offline**, ensuring full control over your photos with **no cloud, no tracking, and no external services**.
+PhotoGallery is a **modern, privacy-first photo management application** built with **Python (Flask) and SQLite**.  
+It provides a Google Photos–like experience **entirely offline**, running locally on your machine and accessed through your web browser.
 
-The app runs locally on Windows 10/11 and opens in the browser while behaving like a native desktop app.
+All photos and data stay on your system.  
+There is **no cloud**, **no tracking**, and **no external services**.
 
 ---
 
@@ -43,12 +44,6 @@ The app runs locally on Windows 10/11 and opens in the browser while behaving li
 - Local filesystem storage
 - SQLite metadata database
 
-### 🖥️ Desktop-Ready (Windows)
-- Packaged as a single `.exe`
-- No Python required for end users
-- Fully offline
-- Portable & fast
-
 ---
 
 ## 🧰 Technology Stack
@@ -59,14 +54,13 @@ The app runs locally on Windows 10/11 and opens in the browser while behaving li
 | Database | SQLite (hardened connection layer) |
 | Frontend | HTML, CSS, JavaScript |
 | UI Icons | Google Material Icons |
-| Packaging | PyInstaller |
 | Storage | Local filesystem |
 
 ---
 
 ## 🔒 Privacy & Ethics
 
-PhotoGallery is built with privacy as a core principle:
+PhotoGallery is designed with privacy as a core principle:
 
 - No cloud uploads
 - No analytics or telemetry
@@ -78,3 +72,107 @@ PhotoGallery is built with privacy as a core principle:
 
 ## 📂 Project Structure
 
+photo_gallery/
+│── app.py
+│── database.db # auto-created
+│
+├── uploads/ # user images
+│
+├── templates/
+│ ├── login.html
+│ ├── signup.html
+│ └── gallery.html
+│
+└── static/
+├── material.css
+├── icons.css
+├── transitions.js
+├── viewer.js
+├── upload.js
+└── smart-albums.js
+
+
+
+---
+
+## ▶️ Run Locally (Development / Personal Use)
+
+### Requirements
+- Python 3.9+
+- pip
+
+### Install Dependencies
+```bash
+pip install flask werkzeug
+
+Start the App
+python app.py
+
+Open in Browser
+http://127.0.0.1:5000
+
+
+The app runs locally only and does not expose itself to the internet.
+
+
+🧪 First-Time Setup Note
+
+If you tested older versions:
+
+Stop the app
+
+Delete database.db
+
+Restart the app
+
+Create a new account
+
+🎯 Use Cases
+
+Personal photo management
+
+Offline photo library
+
+Privacy-conscious users
+
+Learning reference for Flask applications
+
+Open-source photo gallery projects
+
+📌 Roadmap (Optional Enhancements)
+
+Timeline scrubber
+
+EXIF-based camera detection
+
+Color-based smart albums
+
+Offline-first caching
+
+Multi-user admin tools
+
+📄 License
+
+This project is intended for open-source and personal use.
+
+🙌 Contributions
+
+Contributions, ideas, and improvements are welcome.
+Please fork the repository and submit a pull request.
+
+⭐ Acknowledgements
+
+Inspired by modern photo gallery experiences while prioritizing
+privacy, simplicity, and full local control.
+
+
+---
+
+If you want next, I can:
+- Add screenshots section to README
+- Write `CONTRIBUTING.md`
+- Add `.gitignore`
+- Prepare MIT license
+- Clean the repo for first GitHub release
+
+Just tell me what to do next.
