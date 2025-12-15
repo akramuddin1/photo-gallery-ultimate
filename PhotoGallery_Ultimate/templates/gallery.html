@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/material.css">
+<link rel="stylesheet" href="/static/icons.css">
+<title>Gallery</title>
+</head>
+<body>
+
+<header>
+<span class="material-icons">photo</span>
+<h3>Your Photos</h3>
+<button class="icon-btn" onclick="buildSmartAlbums()">
+<span class="material-icons">auto_awesome</span>
+</button>
+<a href="/logout"><span class="material-icons">logout</span></a>
+</header>
+
+<form id="uploadForm" class="upload" enctype="multipart/form-data">
+<input type="file" name="photos" multiple required>
+<progress id="progress" value="0" max="100" style="display:none"></progress>
+<button type="submit">Upload</button>
+</form>
+
+<div class="grid">
+{% for p in photos %}
+<div class="card">
+<img src="/uploads/{{p.filename}}" onclick="openViewer(this.src)">
+<form method="post" action="/delete/{{p.id}}">
+<button onclick="return confirm('Delete?')">
+<span class="material-icons">delete</span>
+</button>
+</form>
+</div>
+{% endfor %}
+</div>
+
+<div id="viewer" class="viewer">
+<span class="material-icons close-btn" onclick="closeViewer()">close</span>
+<span class="material-icons nav left" onclick="prev()">chevron_left</span>
+<img id="viewer-img">
+<span class="material-icons nav right" onclick="next()">chevron_right</span>
+</div>
+
+<script src="/static/transitions.js"></script>
+<script src="/static/viewer.js"></script>
+<script src="/static/upload.js"></script>
+<script src="/static/smart-albums.js"></script>
+</body>
+</html>

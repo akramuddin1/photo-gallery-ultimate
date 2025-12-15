@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/material.css">
+<link rel="stylesheet" href="/static/icons.css">
+<title>Login</title>
+</head>
+<body>
+<div class="auth-card">
+<span class="material-icons logo">photo_library</span>
+<h2>Login</h2>
+{% for m in get_flashed_messages() %}<p>{{m}}</p>{% endfor %}
+<form method="post">
+<input name="username" placeholder="Username" required>
+<input type="password" name="password" placeholder="Password" required>
+<button>Login</button>
+</form>
+<a href="/signup">Create account</a>
+</div>
+<script src="/static/transitions.js"></script>
+</body>
+</html>

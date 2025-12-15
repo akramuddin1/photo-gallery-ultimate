@@ -1,0 +1,18 @@
+body{margin:0;font-family:Inter,Arial;background:radial-gradient(circle at top,#1a1f2b,#0f1115);color:#e8eaed;opacity:0;transition:.4s}
+body.loaded{opacity:1}
+.auth-card{width:340px;margin:120px auto;padding:32px;border-radius:20px;background:rgba(255,255,255,.08);backdrop-filter:blur(18px);box-shadow:0 20px 50px rgba(0,0,0,.5);text-align:center}
+.logo{font-size:48px;color:#1a73e8}
+input,button{width:100%;padding:12px;margin-top:12px}
+button{background:linear-gradient(135deg,#1a73e8,#7baaf7);border:none;border-radius:24px;color:white;cursor:pointer}
+header{display:flex;align-items:center;padding:16px;background:rgba(255,255,255,.06)}
+header h3{flex:1;margin-left:12px}
+.icon-btn{background:none;border:none;color:white;cursor:pointer}
+.upload{text-align:center;padding:20px}
+.grid{column-count:4;column-gap:14px;padding:14px}
+.card{break-inside:avoid;margin-bottom:14px;border-radius:18px;overflow:hidden;background:rgba(255,255,255,.08)}
+.card img{width:100%;cursor:pointer}
+.viewer{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:999}
+.viewer img{max-width:90%;max-height:90%}
+.close-btn{position:absolute;top:20px;right:20px;font-size:36px;color:white;cursor:pointer}
+.nav{position:absolute;top:50%;font-size:48px;color:white;cursor:pointer}
+.nav.left{left:20px}.nav.right{right:20px}
